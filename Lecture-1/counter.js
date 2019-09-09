@@ -2,10 +2,9 @@ class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.state = { counter: 0 };
-    this.changeCounter = this.changeCounter.bind(this);
   }
 
-  changeCounter(changeBy) {
+  changeCounter = (changeBy) => {
     console.log(changeBy)
     this.setState((state, props) => ({
       counter: state.counter + changeBy
