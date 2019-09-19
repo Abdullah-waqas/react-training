@@ -1,11 +1,14 @@
-class Counter extends React.Component {
+import React from 'react';
+import './App.css';
+import { ButtonsBox } from './ButtonsBox';
+
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { counter: 0 };
   }
 
   changeCounter = (changeBy) => {
-    console.log(changeBy)
     this.setState((state, props) => ({
       counter: state.counter + changeBy
     }));
@@ -14,10 +17,11 @@ class Counter extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.changeCounter(1)}>+</button>
-        <button onClick={() => this.changeCounter(-1)}>-</button>
+        <ButtonsBox isBoxVisible={true} changeCounter={this.changeCounter} />
         <h1>{this.state.counter}</h1>
       </div>
     );
   }
 }
+
+export default App;
